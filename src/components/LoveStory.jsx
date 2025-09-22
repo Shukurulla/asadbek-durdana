@@ -3,39 +3,39 @@ import { useRef } from "react";
 
 const loveStoryBlocks = [
   {
-    title: "First Meeting",
+    title: "Биринши ушырасыў",
     lines: [
-      "They met on a summer evening, eyes locked across the street.",
-      "Something clicked in that moment — hearts skipped a beat.",
-      "Their first walk turned into endless talks.",
-      "That night, the stars whispered something sweet.",
+      "Олар жаз кешинде ушырасты, көзлери тосыннан ушырасып қалды.",
+      "Сол сәтте бир нәрсе болды — жүреклери тез соқты.",
+      "Биринши серуен узақ сөйлесиўлерге айланды.",
+      "Сол түни жулдызлар бир нәрсени сыбырлады.",
     ],
   },
   {
-    title: "Growing Together",
+    title: "Бирге өсиў",
     lines: [
-      "From coffees to concerts, every moment they grew.",
-      "Laughing through seasons, as love always knew.",
-      "Through highs and lows, side by side.",
-      "They built a bond they could never hide.",
+      "Кофеден концертлерге дейин, ҳәр бир сәтте олар өсти.",
+      "Мәўсимлер арқылы күлип, муҳаббат ҳәмме ўақыт билгендей.",
+      "Жақсы ҳәм жаман күнлерде, бир-бириниң жанында.",
+      "Олар ҳеш қашан жасыра алмайтуғын байланыс жаратты.",
     ],
   },
   {
-    title: "The Proposal",
+    title: "Усыныс",
     lines: [
-      'She said "yes" under golden skies.',
-      "With teary smiles and joyful cries.",
-      "Friends cheered and families blessed.",
-      "A promise sealed — they were truly impressed.",
+      "Алтын аспан астында ол «әўе» деди.",
+      "Көз жаслары менен қуўаныш пенен толған жылмайыў.",
+      "Дослар қол шаппатлады ҳәм шаңарақлар пәтия берди.",
+      "Ўәде мөҳирленди — олар ҳақыйқаттан таң қалды.",
     ],
   },
   {
-    title: "The Wedding Day",
+    title: "Той күни",
     lines: [
-      'Now comes the day they say "I do",',
-      "Surrounded by hearts both old and new.",
-      "Join the journey, celebrate the start,",
-      "Of a lifetime together, one beating heart.",
+      "Енди «мен разыман» дейтуғын күн келди,",
+      "Ески ҳәм жаңа жүреклер менен қоршалған.",
+      "Жолыңызды байрамлаң, басламаны қутлаң,",
+      "Өмир бойы бирге, бир соққан жүрек.",
     ],
   },
 ];
@@ -93,7 +93,7 @@ export function LoveStory() {
 
   return (
     <section className="py-20 px-4 relative overflow-hidden">
-      {/* Background decorations */}
+      {/* Арқа фон безендириўи */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23d4a574%22%20fill-opacity%3D%220.1%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
       </div>
@@ -107,7 +107,7 @@ export function LoveStory() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl serif text-wedding-accent mb-4">
-            Our Love Story
+            Бизиң муҳаббат тарийхымыз
           </h2>
           <motion.div
             className="w-24 h-px bg-wedding-gold mx-auto"

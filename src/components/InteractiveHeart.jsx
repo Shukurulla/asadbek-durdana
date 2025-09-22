@@ -21,7 +21,7 @@ export function InteractiveHeart() {
 
   return (
     <>
-      {/* Audio element */}
+      {/* Аудио элементи */}
       <audio
         ref={audioRef}
         loop
@@ -29,11 +29,11 @@ export function InteractiveHeart() {
         onPause={() => setIsPlaying(false)}
         onPlay={() => setIsPlaying(true)}
       >
-        {/* Placeholder for wedding music - you would replace with actual audio file */}
+        {/* Той музыкасы ушын орын - сиз ҳақыйқый аудио файлды қоса аласыз */}
         <source src="/wedding-music.mp3" type="audio/mpeg" />
       </audio>
 
-      {/* Floating Heart Button */}
+      {/* Қалқып турыўшы жүрек түймеси */}
       <motion.div
         className="fixed bottom-8 right-8 z-50"
         initial={{ scale: 0, rotate: -180 }}
@@ -72,7 +72,7 @@ export function InteractiveHeart() {
             className="transition-all duration-300"
           />
 
-          {/* Music note indicator */}
+          {/* Музыка ноты индикаторы */}
           <motion.div
             className="absolute -top-2 -right-2 bg-wedding-white text-wedding-gold rounded-full p-1"
             initial={{ opacity: 0, scale: 0 }}
@@ -85,7 +85,7 @@ export function InteractiveHeart() {
             {isPlaying ? <Volume2 size={12} /> : <VolumeX size={12} />}
           </motion.div>
 
-          {/* Floating hearts animation when playing */}
+          {/* Ойнап турған ўақытта қалқып турған жүреклер анимациясы */}
           {isPlaying && (
             <>
               {[...Array(3)].map((_, i) => (
@@ -118,7 +118,7 @@ export function InteractiveHeart() {
           )}
         </motion.button>
 
-        {/* Tooltip */}
+        {/* Көмекши мағлыўмат */}
         <motion.div
           className="absolute bottom-full right-0 mb-2 bg-wedding-white text-wedding-text px-3 py-2 rounded-lg shadow-lg text-sm whitespace-nowrap border border-wedding-gold/20"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -128,7 +128,7 @@ export function InteractiveHeart() {
           }}
           transition={{ duration: 0.2 }}
         >
-          {isPlaying ? "Pause romantic music" : "Play romantic music"}
+          {isPlaying ? "Музыканы тоқтатыў" : "Романтик музыка ойнатыў"}
           <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-wedding-white"></div>
         </motion.div>
       </motion.div>

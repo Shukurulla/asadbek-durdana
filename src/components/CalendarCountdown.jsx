@@ -12,8 +12,8 @@ export function CalendarCountdown() {
     seconds: 0,
   });
 
-  // Wedding date: August 18, 2025
-  const weddingDate = new Date("2025-08-18T16:00:00");
+  // Той санасы: 25 сентябрь 2025-жыл
+  const weddingDate = new Date("2025-09-25T16:00:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,21 +35,21 @@ export function CalendarCountdown() {
     return () => clearInterval(timer);
   }, [weddingDate]);
 
-  // Generate calendar for August 2025
+  // Сентябрь 2025 ушын календарь жаратыў
   const generateCalendar = () => {
-    const firstDay = new Date(2025, 7, 1); // August 2025 (month is 0-indexed)
-    const lastDay = new Date(2025, 7, 31);
+    const firstDay = new Date(2025, 8, 1); // Сентябрь 2025 (ай 0-индекстен басланады)
+    const lastDay = new Date(2025, 8, 30);
     const startingDayOfWeek = firstDay.getDay();
     const daysInMonth = lastDay.getDate();
 
     const calendar = [];
 
-    // Add empty cells for days before the first day of the month
+    // Айдың биринши күнинен алдынғы бос ячейкаларды қосыў
     for (let i = 0; i < startingDayOfWeek; i++) {
       calendar.push(null);
     }
 
-    // Add all days of the month
+    // Айдың барлық күнлерин қосыў
     for (let day = 1; day <= daysInMonth; day++) {
       calendar.push(day);
     }
@@ -58,7 +58,7 @@ export function CalendarCountdown() {
   };
 
   const calendar = generateCalendar();
-  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const weekDays = ["Жек", "Дүй", "Сей", "Сәр", "Пей", "Жум", "Шем"];
 
   return (
     <section className="py-20 px-4 bg-wedding-blush/30">
@@ -71,7 +71,7 @@ export function CalendarCountdown() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl serif text-wedding-accent mb-4">
-            Save the Date
+            Күнди белгилең
           </h2>
           <motion.div
             className="w-24 h-px bg-wedding-gold mx-auto"
@@ -82,7 +82,7 @@ export function CalendarCountdown() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Calendar Widget */}
+          {/* Календарь виджети */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -90,10 +90,10 @@ export function CalendarCountdown() {
             className="bg-wedding-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-wedding-gold/20"
           >
             <h3 className="text-3xl serif text-wedding-accent mb-6 text-center">
-              August 2025
+              Сентябрь 2025
             </h3>
 
-            {/* Calendar Grid */}
+            {/* Календарь торы */}
             <div className="grid grid-cols-7 gap-2 mb-4">
               {weekDays.map((day) => (
                 <div
@@ -117,7 +117,7 @@ export function CalendarCountdown() {
                         : ""
                     }
                     ${
-                      day === 18
+                      day === 25
                         ? "bg-wedding-gold text-white rounded-lg font-bold"
                         : "text-wedding-text"
                     }
@@ -125,7 +125,7 @@ export function CalendarCountdown() {
                   whileHover={day ? { scale: 1.1 } : {}}
                 >
                   {day}
-                  {day === 18 && (
+                  {day === 25 && (
                     <motion.div
                       className="absolute -top-1 -right-1"
                       animate={{ scale: [1, 1.3, 1] }}
@@ -149,12 +149,12 @@ export function CalendarCountdown() {
               className="mt-6 text-center"
             >
               <p className="elegant text-wedding-text">
-                Our special day is marked with ♥
+                Бизиң айрықша күнимиз ♥ белгиси менен белгиленген
               </p>
             </motion.div>
           </motion.div>
 
-          {/* Countdown Timer */}
+          {/* Кери санаў таймери */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
@@ -162,15 +162,15 @@ export function CalendarCountdown() {
             className="bg-wedding-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-wedding-gold/20"
           >
             <h3 className="text-3xl serif text-wedding-accent mb-8 text-center">
-              Countdown to Forever
+              Мәңгиликке шекемги санаў
             </h3>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
               {[
-                { label: "Days", value: timeLeft.days },
-                { label: "Hours", value: timeLeft.hours },
-                { label: "Minutes", value: timeLeft.minutes },
-                { label: "Seconds", value: timeLeft.seconds },
+                { label: "Күн", value: timeLeft.days },
+                { label: "Саат", value: timeLeft.hours },
+                { label: "Минут", value: timeLeft.minutes },
+                { label: "Секунд", value: timeLeft.seconds },
               ].map((item, index) => (
                 <motion.div
                   key={item.label}
@@ -184,7 +184,7 @@ export function CalendarCountdown() {
                   <div className="bg-wedding-gold/10 rounded-xl p-4 mb-2">
                     <motion.span
                       className="text-3xl md:text-4xl serif font-bold text-wedding-gold block"
-                      key={item.value} // This ensures the animation triggers on value change
+                      key={item.value} // Бул мәнис өзгергенде анимацияны қосады
                       initial={{ scale: 1.2 }}
                       animate={{ scale: 1 }}
                       transition={{ duration: 0.3 }}
@@ -206,7 +206,7 @@ export function CalendarCountdown() {
               className="text-center"
             >
               <p className="text-lg elegant text-wedding-text mb-4">
-                Until we say "I do"
+                «Мен разыман» дегенимизге шекем
               </p>
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}

@@ -1,7 +1,7 @@
 import { WeddingHeader } from "./components/WeddingHeader";
 import { LoveStory } from "./components/LoveStory";
 import { StudioGallery } from "./components/StudioGallery";
-import { LocationSection } from "./components/LocationSection";
+import { LocationSection } from "./components/LocationSection.jsx";
 import { CalendarCountdown } from "./components/CalendarCountdown";
 import { RSVPForm } from "./components/RSVPForm";
 import { InteractiveHeart } from "./components/InteractiveHeart";
@@ -11,23 +11,20 @@ import { motion } from "framer-motion";
 export default function App() {
   return (
     <div className="min-h-screen wedding-gradient">
-      {/* Header with initials, photo, names, and date */}
+      {/* Header - инициаллар, сүўрет, атлар ҳәм сана */}
       <WeddingHeader />
 
-      {/* Love Story Section */}
+      {/* Муҳаббат тарийхы бөлими */}
       <LoveStory />
 
-      {/* Studio Gallery */}
+      {/* Студия галереясы */}
       <StudioGallery />
 
-      {/* Location Section */}
+      {/* Орын бөлими */}
       <LocationSection />
 
-      {/* Calendar and Countdown */}
+      {/* Календарь ҳәм кери санаў */}
       <CalendarCountdown />
-
-      {/* RSVP Form */}
-      <RSVPForm />
 
       {/* Footer */}
       <motion.footer
@@ -46,15 +43,15 @@ export default function App() {
             className="text-center"
           >
             <h3 className="text-4xl cursive text-wedding-gold mb-4">
-              Igalbek & Aynura
+              Асадбек & Дурдана
             </h3>
             <p className="text-lg elegant text-wedding-text mb-6">
-              Thank you for being part of our love story
+              Бизиң муҳаббат тарийхымыздың бир бөлеги болғаныңыз ушын рахмет
             </p>
             <div className="text-6xl text-wedding-gold mb-4">∞</div>
             <p className="elegant text-wedding-accent">
-              Together forever, never apart. Maybe in distance, but never in
-              heart.
+              Мәңгиге бирге, ҳеш қашан айырылмастан. Аралықта болсақ та, жүректе
+              ҳәмме ўақыт бирге.
             </p>
           </motion.div>
 
@@ -66,16 +63,17 @@ export default function App() {
             viewport={{ once: true }}
           >
             <p className="elegant text-sm text-wedding-text/70">
-              © 2025 Igalbek & Aynura Wedding. Made with ♥ for our special day.
+              © 2025 Асадбек & Дурдана тойы. Бизиң қутлы күнимиз ушын муҳаббат
+              пенен жаратылды ♥
             </p>
           </motion.div>
         </div>
       </motion.footer>
 
-      {/* Interactive Heart - Music Player */}
+      {/* Интерактив жүрек - Музыка ойнатқыш */}
       <InteractiveHeart />
 
-      {/* Toast notifications */}
+      {/* Toast хабарламалары */}
       <Toaster position="top-center" />
     </div>
   );

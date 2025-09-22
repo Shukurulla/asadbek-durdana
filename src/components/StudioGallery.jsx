@@ -5,27 +5,27 @@ import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 const galleryImages = [
   {
     src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop&crop=faces",
-    alt: "Igalbek & Aynura - Studio Shot 1",
+    alt: "Асадбек & Дурдана - Студия сүўрети 1",
   },
   {
     src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop&crop=faces",
-    alt: "Igalbek & Aynura - Studio Shot 2",
+    alt: "Асадбек & Дурдана - Студия сүўрети 2",
   },
   {
     src: "https://images.unsplash.com/photo-1582391265936-e3db765a3fa0?w=600&h=400&fit=crop&crop=faces",
-    alt: "Igalbek & Aynura - Studio Shot 3",
+    alt: "Асадбек & Дурдана - Студия сүўрети 3",
   },
   {
     src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&crop=faces",
-    alt: "Igalbek & Aynura - Studio Shot 4",
+    alt: "Асадбек & Дурдана - Студия сүўрети 4",
   },
   {
     src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=400&fit=crop&crop=faces",
-    alt: "Igalbek & Aynura - Studio Shot 5",
+    alt: "Асадбек & Дурдана - Студия сүўрети 5",
   },
   {
     src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&h=400&fit=crop&crop=faces",
-    alt: "Igalbek & Aynura - Studio Shot 6",
+    alt: "Асадбек & Дурдана - Студия сүўрети 6",
   },
 ];
 
@@ -59,7 +59,7 @@ export function StudioGallery() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl serif text-wedding-accent mb-4">
-            Studio Gallery
+            Студия галереясы
           </h2>
           <motion.div
             className="w-24 h-px bg-wedding-gold mx-auto mb-4"
@@ -68,11 +68,11 @@ export function StudioGallery() {
             transition={{ duration: 1, delay: 0.5 }}
           />
           <p className="text-xl elegant text-wedding-text">
-            Capturing our love in timeless moments
+            Бизиң муҳаббатымызды мәңгилик сәтлерде сақлаў
           </p>
         </motion.div>
 
-        {/* Main Gallery Carousel */}
+        {/* Тийкарғы галерея карусели */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={
@@ -92,7 +92,7 @@ export function StudioGallery() {
               transition={{ duration: 0.5 }}
             />
 
-            {/* Overlay with heart */}
+            {/* Жүрек пенен қаплама */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent">
               <motion.div
                 className="absolute top-4 right-4 text-wedding-white"
@@ -103,7 +103,7 @@ export function StudioGallery() {
               </motion.div>
             </div>
 
-            {/* Navigation buttons */}
+            {/* Навигация түймелери */}
             <button
               onClick={prevImage}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-wedding-white/80 hover:bg-wedding-white text-wedding-accent rounded-full p-2 transition-all duration-300 backdrop-blur-sm"
@@ -120,7 +120,7 @@ export function StudioGallery() {
           </div>
         </motion.div>
 
-        {/* Thumbnail Navigation */}
+        {/* Кишкене сүўретлер навигациясы */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -141,14 +141,14 @@ export function StudioGallery() {
             >
               <img
                 src={image.src}
-                alt={`Thumbnail ${index + 1}`}
+                alt={`Кишкене сүўрет ${index + 1}`}
                 className="w-full h-full object-cover"
               />
             </motion.button>
           ))}
         </motion.div>
 
-        {/* Gallery Grid - Additional smaller images */}
+        {/* Галерея торы - Қосымша кишкене сүўретлер */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ export function StudioGallery() {
             >
               <img
                 src={image.src}
-                alt={`Gallery ${index + 1}`}
+                alt={`Галерея ${index + 1}`}
                 className="w-full h-full object-cover cursor-pointer"
               />
             </motion.div>

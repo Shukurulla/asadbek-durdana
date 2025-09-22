@@ -9,7 +9,7 @@ export const WeddingHeader = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
     >
-      {/* Decorative background elements */}
+      {/* Безендириў элементлери */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-20 left-20 w-32 h-32 border border-wedding-gold/20 rounded-full"
@@ -23,9 +23,9 @@ export const WeddingHeader = () => {
         />
       </div>
 
-      {/* Main content */}
+      {/* Тийкарғы мазмуны */}
       <div className="text-center z-10 px-4">
-        {/* Elegant Initials */}
+        {/* Элегант инициаллар */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -33,7 +33,7 @@ export const WeddingHeader = () => {
           className="mb-8"
         >
           <h1 className="text-8xl md:text-9xl serif font-light text-wedding-gold tracking-wider">
-            I & A
+            А & Д
           </h1>
           <motion.div
             className="w-32 h-px bg-wedding-gold mx-auto mt-4"
@@ -43,7 +43,7 @@ export const WeddingHeader = () => {
           />
         </motion.div>
 
-        {/* Couple Photo Placeholder */}
+        {/* Жуп сүўрети */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -53,7 +53,7 @@ export const WeddingHeader = () => {
           <div className="w-64 h-80 md:w-80 md:h-96 mx-auto rounded-lg overflow-hidden shadow-2xl border-4 border-wedding-white">
             <img
               src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400&h=500&fit=crop&crop=faces"
-              alt="Igalbek & Aynura"
+              alt="Асадбек & Дурдана"
               className="w-full h-full object-cover"
             />
           </div>
@@ -66,7 +66,7 @@ export const WeddingHeader = () => {
           </motion.div>
         </motion.div>
 
-        {/* Couple Names with Typewriter Effect */}
+        {/* Жуп атлары */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -79,7 +79,7 @@ export const WeddingHeader = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 2 }}
             >
-              Igalbek
+              Асадбек
             </motion.span>
             <motion.span
               className="mx-4 text-wedding-gold"
@@ -94,12 +94,12 @@ export const WeddingHeader = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 3 }}
             >
-              Aynura
+              Дурдана
             </motion.span>
           </h2>
         </motion.div>
 
-        {/* Wedding Date */}
+        {/* Той санасы */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -108,14 +108,14 @@ export const WeddingHeader = () => {
         >
           <div className="inline-block bg-wedding-white/80 backdrop-blur-sm rounded-xl px-8 py-4 shadow-lg border border-wedding-gold/20">
             <p className="text-2xl md:text-3xl serif text-wedding-text mb-2">
-              Wedding Day
+              Той күни
             </p>
             <p className="text-4xl md:text-5xl serif font-medium text-wedding-gold">
-              18.08.2025
+              25.09.2025
             </p>
           </div>
 
-          {/* Decorative corners */}
+          {/* Безендириў мүйешлери */}
           <div className="absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-wedding-gold"></div>
           <div className="absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-wedding-gold"></div>
           <div className="absolute -bottom-2 -left-2 w-4 h-4 border-l-2 border-b-2 border-wedding-gold"></div>
@@ -123,7 +123,7 @@ export const WeddingHeader = () => {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Айландырыў көрсеткиши */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}

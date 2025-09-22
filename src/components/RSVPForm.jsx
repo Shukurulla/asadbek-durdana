@@ -29,19 +29,19 @@ export function RSVPForm() {
     e.preventDefault();
 
     if (!formData.guestName || !formData.phoneNumber || !formData.willAttend) {
-      toast.error("Please fill in all required fields");
+      toast.error("Илтимас, барлық керекли майданларды толтырың");
       return;
     }
 
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // Форманы жибериўди симуляция қылыў
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast.success(
-      "RSVP submitted successfully! We can't wait to celebrate with you!"
+      "Сизиң жуўабыңыз табыслы жиберилди! Сиз бенен бирге байрамлаўды асығыўшылық пенен күтемиз!"
     );
   };
 
@@ -64,12 +64,10 @@ export function RSVPForm() {
               <CheckCircle size={64} className="mx-auto" />
             </motion.div>
 
-            <h2 className="text-4xl serif text-wedding-accent mb-4">
-              Thank You!
-            </h2>
+            <h2 className="text-4xl serif text-wedding-accent mb-4">Рахмет!</h2>
             <p className="text-xl elegant text-wedding-text mb-6">
-              Your RSVP has been received. We're so excited to celebrate our
-              special day with you!
+              Сизиң жуўабыңыз қабыл етилди. Бизиң қутлы күнимизди сиз бенен
+              байрамлаўды асығыўшылық пенен күтемиз!
             </p>
 
             <motion.div
@@ -96,7 +94,7 @@ export function RSVPForm() {
           className="text-center mb-12"
         >
           <h2 className="text-5xl md:text-6xl serif text-wedding-accent mb-4">
-            RSVP
+            Тойға шақырыў
           </h2>
           <motion.div
             className="w-24 h-px bg-wedding-gold mx-auto mb-6"
@@ -105,7 +103,7 @@ export function RSVPForm() {
             transition={{ duration: 1, delay: 0.5 }}
           />
           <p className="text-xl elegant text-wedding-text">
-            Please let us know if you'll be joining us
+            Илтимас, бизге қосыласыз ба, хабарлаң
           </p>
         </motion.div>
 
@@ -115,8 +113,8 @@ export function RSVPForm() {
           transition={{ duration: 1, delay: 0.3 }}
           className="bg-wedding-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-wedding-gold/20"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Guest Name */}
+          <div className="space-y-6">
+            {/* Қонақ аты */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -126,7 +124,7 @@ export function RSVPForm() {
                 htmlFor="guestName"
                 className="text-wedding-accent mb-2 block"
               >
-                Full Name *
+                Толық атыңыз *
               </Label>
               <Input
                 id="guestName"
@@ -134,12 +132,12 @@ export function RSVPForm() {
                 value={formData.guestName}
                 onChange={(e) => handleInputChange("guestName", e.target.value)}
                 className="bg-wedding-white/50 border-wedding-gold/30 focus:border-wedding-gold"
-                placeholder="Enter your full name"
+                placeholder="Атыңызды киритиң"
                 required
               />
             </motion.div>
 
-            {/* Phone Number */}
+            {/* Телефон номери */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -149,7 +147,7 @@ export function RSVPForm() {
                 htmlFor="phoneNumber"
                 className="text-wedding-accent mb-2 block"
               >
-                Phone Number *
+                Телефон номериңиз *
               </Label>
               <Input
                 id="phoneNumber"
@@ -159,12 +157,12 @@ export function RSVPForm() {
                   handleInputChange("phoneNumber", e.target.value)
                 }
                 className="bg-wedding-white/50 border-wedding-gold/30 focus:border-wedding-gold"
-                placeholder="Enter your phone number"
+                placeholder="Телефон номериңизди киритиң"
                 required
               />
             </motion.div>
 
-            {/* Will Attend */}
+            {/* Қатнасыў */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -174,7 +172,7 @@ export function RSVPForm() {
                 htmlFor="willAttend"
                 className="text-wedding-accent mb-2 block"
               >
-                Will you be attending? *
+                Қатнасасыз ба? *
               </Label>
               <select
                 id="willAttend"
@@ -185,13 +183,13 @@ export function RSVPForm() {
                 className="w-full p-3 bg-wedding-white/50 border border-wedding-gold/30 rounded-md focus:border-wedding-gold focus:outline-none elegant"
                 required
               >
-                <option value="">Please select</option>
-                <option value="yes">I will attend</option>
-                <option value="no">Sorry, can't come</option>
+                <option value="">Илтимас, таңлаң</option>
+                <option value="yes">Әўе, қатнасаман</option>
+                <option value="no">Кешириң, келе алмайман</option>
               </select>
             </motion.div>
 
-            {/* Relationship */}
+            {/* Қатнас */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -201,7 +199,7 @@ export function RSVPForm() {
                 htmlFor="relationship"
                 className="text-wedding-accent mb-2 block"
               >
-                Relationship to the couple
+                Жупқа қатнасыңыз
               </Label>
               <Input
                 id="relationship"
@@ -211,11 +209,11 @@ export function RSVPForm() {
                   handleInputChange("relationship", e.target.value)
                 }
                 className="bg-wedding-white/50 border-wedding-gold/30 focus:border-wedding-gold"
-                placeholder="e.g., friend, colleague, cousin"
+                placeholder="Мысалы: дос, хызметкер, туўысқан"
               />
             </motion.div>
 
-            {/* Message */}
+            {/* Хабар */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
@@ -225,18 +223,18 @@ export function RSVPForm() {
                 htmlFor="message"
                 className="text-wedding-accent mb-2 block"
               >
-                Special message for the couple
+                Жуп ушын арнаўлы хабар
               </Label>
               <Textarea
                 id="message"
                 value={formData.message}
                 onChange={(e) => handleInputChange("message", e.target.value)}
                 className="bg-wedding-white/50 border-wedding-gold/30 focus:border-wedding-gold min-h-24"
-                placeholder="Share your wishes or any special requests..."
+                placeholder="Тилеклериңизди ямаса арнаўлы өтинишлериңизди бөлисиң..."
               />
             </motion.div>
 
-            {/* Submit Button */}
+            {/* Жибериў түймеси */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -244,7 +242,7 @@ export function RSVPForm() {
               className="pt-4"
             >
               <Button
-                type="submit"
+                onClick={handleSubmit}
                 disabled={isSubmitting}
                 className="w-full bg-wedding-gold hover:bg-wedding-gold/90 text-white py-4 text-lg serif font-medium shadow-lg disabled:opacity-50"
               >
@@ -263,10 +261,10 @@ export function RSVPForm() {
                 ) : (
                   <Send size={20} className="mr-2" />
                 )}
-                {isSubmitting ? "Sending..." : "Send RSVP"}
+                {isSubmitting ? "Жибериў..." : "Жуўап жибериў"}
               </Button>
             </motion.div>
-          </form>
+          </div>
         </motion.div>
       </div>
     </section>
