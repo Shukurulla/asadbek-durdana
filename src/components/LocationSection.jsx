@@ -43,7 +43,7 @@ export function LocationSection() {
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1519167758481-83f29c8ae8d4?w=600&h=400&fit=crop"
+                src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrGjfZVjb1ETaGOz2FSHgrZTT8WbApjkiB59cjVEYUucmCSyMBRgiFd7yXIEhSy1HfNOQ0kzW3Pdm8_KvArZliAUiwVid1zBzUo5O7XFIfAfavU0RDP-G-9BiL7QTtPbghdIPVd=s680-w680-h510-rw"
                 alt="Royal ресторан"
                 className="w-full h-80 object-cover"
               />

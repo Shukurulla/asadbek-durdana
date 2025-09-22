@@ -1,30 +1,31 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
+import { five, four, one, six, three, two } from "../assets";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop&crop=faces",
+    src: one,
     alt: "Асадбек & Дурдана - Студия сүўрети 1",
   },
   {
-    src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=400&fit=crop&crop=faces",
+    src: two,
     alt: "Асадбек & Дурдана - Студия сүўрети 2",
   },
   {
-    src: "https://images.unsplash.com/photo-1582391265936-e3db765a3fa0?w=600&h=400&fit=crop&crop=faces",
+    src: three,
     alt: "Асадбек & Дурдана - Студия сүўрети 3",
   },
   {
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop&crop=faces",
+    src: four,
     alt: "Асадбек & Дурдана - Студия сүўрети 4",
   },
   {
-    src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=400&fit=crop&crop=faces",
+    src: five,
     alt: "Асадбек & Дурдана - Студия сүўрети 5",
   },
   {
-    src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&h=400&fit=crop&crop=faces",
+    src: six,
     alt: "Асадбек & Дурдана - Студия сүўрети 6",
   },
 ];
