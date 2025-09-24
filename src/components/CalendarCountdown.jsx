@@ -1,6 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Heart } from "lucide-react";
+import {
+  Heart,
+  Clock,
+  Calendar,
+  Users,
+  Music,
+  PartyPopper,
+} from "lucide-react";
 
 export function CalendarCountdown() {
   const ref = useRef(null);
@@ -12,8 +19,8 @@ export function CalendarCountdown() {
     seconds: 0,
   });
 
-  // Той санасы: 25 сентябрь 2025-жыл
-  const weddingDate = new Date("2025-09-25T16:00:00");
+  // Той санасы: 25 сентябрь 2025-жыл, саат 17:00
+  const weddingDate = new Date("2025-09-25T17:00:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -60,6 +67,31 @@ export function CalendarCountdown() {
   const calendar = generateCalendar();
   const weekDays = ["Жек", "Дүй", "Сей", "Сәр", "Пей", "Жум", "Шем"];
 
+  // Той программасы
+  const weddingSchedule = [
+    {
+      time: "17:00",
+      event: "Қудалар келиўи",
+      icon: Users,
+      color: "text-wedding-gold",
+      description: "Қутлы қонақларды күтип алыў",
+    },
+    {
+      time: "18:00",
+      event: "Беташарбасланыўы",
+      icon: Heart,
+      color: "text-wedding-rose",
+      description: "Дәстүрий Беташаррәсими",
+    },
+    {
+      time: "19:00",
+      event: "Комсомол той басланыўы",
+      icon: PartyPopper,
+      color: "text-wedding-accent",
+      description: "Байрам дастурханы ҳәм көңил ашыў",
+    },
+  ];
+
   return (
     <section className="py-20 px-4 bg-wedding-blush/30">
       <div className="max-w-6xl mx-auto">
@@ -79,6 +111,53 @@ export function CalendarCountdown() {
             animate={isInView ? { width: 96 } : { width: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           />
+        </motion.div>
+
+        {/* Той программасы */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="mb-12"
+        >
+          <div className="bg-wedding-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-wedding-gold/20 max-w-3xl mx-auto">
+            <h3 className="text-3xl serif text-wedding-accent mb-8 text-center flex items-center justify-center gap-3">
+              <Clock className="w-8 h-8 text-wedding-gold" />
+              Той программасы
+              <Clock className="w-8 h-8 text-wedding-gold" />
+            </h3>
+
+            <div className="space-y-6">
+              {weddingSchedule.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }
+                  }
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
+                  className="flex items-start gap-4 group hover:bg-wedding-gold/5 p-4 rounded-xl transition-colors duration-300"
+                >
+                  <div className="bg-wedding-gold/10 rounded-full p-3 group-hover:bg-wedding-gold/20 transition-colors">
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-2xl serif font-bold text-wedding-gold">
+                        {item.time}
+                      </span>
+                      <h4 className="text-xl serif text-wedding-accent font-medium">
+                        {item.event}
+                      </h4>
+                    </div>
+                    <p className="elegant text-wedding-text/70 mt-1">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -205,13 +284,17 @@ export function CalendarCountdown() {
               transition={{ duration: 1, delay: 1.3 }}
               className="text-center"
             >
-              <p className="text-lg elegant text-wedding-text mb-4">
-                «Мен разыман» дегенимизге шекем
-              </p>
+              <div className="flex items-center justify-center gap-2">
+                <Calendar className="w-5 h-5 text-wedding-gold" />
+                <span className="text-wedding-gold font-semibold serif">
+                  25 Сентябрь, 2025 | 17:00
+                </span>
+                <Calendar className="w-5 h-5 text-wedding-gold" />
+              </div>
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="text-wedding-gold"
+                className="text-wedding-gold mt-4"
               >
                 <Heart size={32} fill="currentColor" className="mx-auto" />
               </motion.div>

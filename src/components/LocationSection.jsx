@@ -1,6 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Clock, Phone, Mail } from "lucide-react";
+import {
+  MapPin,
+  Clock,
+  Phone,
+  Mail,
+  Calendar,
+  Users,
+  Heart,
+  PartyPopper,
+} from "lucide-react";
 
 export function LocationSection() {
   const ref = useRef(null);
@@ -96,16 +105,53 @@ export function LocationSection() {
 
                 <div className="flex items-start space-x-4">
                   <div className="bg-wedding-gold/20 rounded-full p-2">
+                    <Calendar className="w-5 h-5 text-wedding-gold" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-wedding-accent">Той күни</p>
+                    <p className="elegant text-wedding-text">
+                      25 Сентябрь, 2025-жыл
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="bg-wedding-gold/20 rounded-full p-2">
                     <Clock className="w-5 h-5 text-wedding-gold" />
                   </div>
                   <div>
-                    <p className="font-medium text-wedding-accent">Той ўақты</p>
-                    <p className="elegant text-wedding-text">
-                      Саат 16:00 - 23:00
+                    <p className="font-medium text-wedding-accent mb-3">
+                      Той ўақты
                     </p>
-                    <p className="elegant text-wedding-text text-sm">
-                      Қутлы болсын! Саат 15:30 дан баслап
-                    </p>
+                    <div className="space-y-2 bg-wedding-gold/5 rounded-lg p-3">
+                      <div className="flex items-center gap-3 elegant text-wedding-text">
+                        <Users className="w-4 h-4 text-wedding-gold" />
+                        <span className="font-semibold text-wedding-gold">
+                          17:00
+                        </span>
+                        <span className="text-wedding-accent">
+                          Қудалар келиўи
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3 elegant text-wedding-text">
+                        <Heart className="w-4 h-4 text-wedding-rose" />
+                        <span className="font-semibold text-wedding-gold">
+                          18:00
+                        </span>
+                        <span className="text-wedding-accent">
+                          Беташарбасланыўы
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3 elegant text-wedding-text">
+                        <PartyPopper className="w-4 h-4 text-wedding-accent" />
+                        <span className="font-semibold text-wedding-gold">
+                          19:00
+                        </span>
+                        <span className="text-wedding-accent">
+                          Комсомол той басланыўы
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -161,12 +207,12 @@ export function LocationSection() {
               {/* Google Maps орнына - сиз ҳақыйқый картаны қоса аласыз */}
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1890.1209271347107!2d59.46041394081386!3d42.40911252484005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dda359db99270b%3A0x4abb3188f3944f00!2sROYAL%20RESTURANT!5e0!3m2!1sru!2s!4v1758528755845!5m2!1sru!2s"
-                width="600"
-                height="450"
+                width="100%"
+                height="100%"
                 style={{ border: 0 }}
-                allowfullscreen=""
+                allowFullScreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>

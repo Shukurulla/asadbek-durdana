@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
+import { four } from "../assets";
 
 export const WeddingHeader = () => {
   return (
@@ -52,7 +53,7 @@ export const WeddingHeader = () => {
         >
           <div className="w-64 h-80 md:w-80 md:h-96 mx-auto rounded-lg overflow-hidden shadow-2xl border-4 border-wedding-white">
             <img
-              src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400&h=500&fit=crop&crop=faces"
+              src={four}
               alt="Асадбек & Дурдана"
               className="w-full h-full object-cover"
             />
